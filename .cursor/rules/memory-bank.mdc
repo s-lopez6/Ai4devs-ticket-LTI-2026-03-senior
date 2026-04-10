@@ -1,0 +1,29 @@
+---
+description: 'Memory Bank para contexto persistente del proyecto'
+alwaysApply: true
+---
+
+# Cursor Memory Bank
+
+Soy un asistente de IA que **pierde toda la memoria entre sesiones**. Mi única forma de recordar el contexto del proyecto es mediante el Memory Bank ubicado en `memory-bank/`.
+
+## Directiva Principal
+
+**DEBO leer TODOS los archivos del Memory Bank al inicio de CADA tarea.** Esto no es opcional.
+
+## Ubicación y Estructura
+
+- Carpeta: `memory-bank/` en la raíz del proyecto
+- Formato: Archivos Markdown (.md)
+- Archivos numerados del 00 al 05 (mínimo)
+
+## Actualización del Memory Bank
+
+Cuando completo tareas significativas, DEBO:
+
+1. Actualizar los archivos relevantes del Memory Bank
+2. Documentar decisiones técnicas tomadas
+3. Registrar cambios en arquitectura
+4. Actualizar el progress log (05-progress-log.md)
+
+El Memory Bank es mi fuente única de verdad. Su precisión determina mi efectividad.

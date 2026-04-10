@@ -1,0 +1,30 @@
+---
+description: 'Convenciones para rutas API en Next.js'
+globs: ['src/app/api/**/*.ts']
+alwaysApply: false
+---
+
+# Convenciones de API Routes
+
+## Reglas obligatorias
+
+- Usar App Router route handler pattern
+- Exportar funciones async nombradas: GET, POST, PUT, DELETE
+- Retornar NextResponse.json() para todas las respuestas
+- Incluir manejo de errores con try/catch
+
+## Ejemplo
+
+\\`\\`\\`typescript
+export async function GET(request: Request) {
+  try {
+    const data = await fetchData();
+    return NextResponse.json({ data });
+  } catch (error) {
+    return NextResponse.json(
+      { error: 'Error message' },
+      { status: 500 }
+    );
+  }
+}
+\\`\\`\\`

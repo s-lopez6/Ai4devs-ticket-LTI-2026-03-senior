@@ -1,0 +1,16 @@
+---
+description: 'Auto-aprendizaje de patrones del proyecto'
+alwaysApply: true
+---
+
+# Auto-aprendizaje de Patrones
+
+Analiza el proyecto actual, identifica los siguientes patrones y aplícalos consistentemente:
+
+1. **Estructura de archivos**: Cómo están organizados los componentes, servicios, utils
+2. **Convenciones de nombres**: Para archivos, funciones, variables, tipos
+3. **Patrones de imports**: Paths absolutos vs relativos, orden de imports
+4. **Gestión de errores**: Estructura try/catch, logging, tipos de error
+5. **Estilo de código**: Uso de TypeScript strict, preferencias de sintaxis
+
+Antes de sugerir código, revisa ejemplos existentes en el proyecto y mantén consistencia.
