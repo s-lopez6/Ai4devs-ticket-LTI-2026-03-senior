@@ -18,5 +18,13 @@ Prompt 3: Yeah I like it. Please, adapt the documentation, and add the correspoi
 
 # WORK
 
+Add a new instruction to @.cursor/agents/frontend-developer.md . for form validations, always use Vestjs: https://vestjs.dev/docs/api_reference
+
 (model auto)
 /enrich-us Enrich the story @ai-specs/changes/SCRUM-1-Add-Candidates.md . Do not use JIRA, is not connected so far.
+
+@.cursor/commands/develop-backend.md @ai-specs/changes/SCRUM-1-Add-Candidates_backend.md
+
+@.cursor/commands/develop-frontend.md @ai-specs/changes/SCRUM-1-Add-Candidates_frontend.md
+
+You must set up properly the cors in the server, because I am getting a CORS error.

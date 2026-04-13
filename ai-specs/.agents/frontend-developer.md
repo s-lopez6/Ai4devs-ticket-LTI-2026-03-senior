@@ -101,6 +101,7 @@ Save the implementation plan in `ai-specs/doc/{feature_name}/frontend.md`
 
 - Services must have comprehensive error handling with try-catch blocks
 - Components must handle loading and error states explicitly
+- For form validations, always use Vest (`https://vestjs.dev/docs/api_reference`)
 - TypeScript components must have proper type definitions for props and state
 - Components should be functional and use hooks appropriately
 - API communication should use service layer when possible

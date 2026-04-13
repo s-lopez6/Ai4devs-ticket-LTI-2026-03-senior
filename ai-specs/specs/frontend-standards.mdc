@@ -60,10 +60,10 @@ This document outlines the best practices, conventions, and standards used in th
 - **React Router DOM 6.23.1**: Client-side routing and navigation
 
 ### UI Framework
-- **Bootstrap 5.3.3**: CSS framework for responsive design
-- **React Bootstrap 2.10.2**: Bootstrap components for React
-- **React Bootstrap Icons 1.11.4**: Icon library
-- **React DatePicker 6.9.0**: Date input components
+- **Material UI (MUI)**: Primary component library for this repository (source of truth: `README.md`)
+- **Emotion**: Styling engine used by MUI (`@emotion/react`, `@emotion/styled`)
+
+Note: Some sections below reference Bootstrap/React-Bootstrap as legacy guidance. Prefer MUI for all new UI work unless a ticket explicitly requests otherwise.
 
 ### State Management & Data Flow
 - **React Hooks**: useState, useEffect for local state management

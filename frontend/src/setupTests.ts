@@ -3,3 +3,12 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+
+// React Router (and its deps) may rely on TextEncoder in Jest.
+// Node provides it via the `util` module.
+import { TextDecoder, TextEncoder } from 'util';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const globalAny: any = global;
+if (!globalAny.TextEncoder) globalAny.TextEncoder = TextEncoder;
+if (!globalAny.TextDecoder) globalAny.TextDecoder = TextDecoder;
