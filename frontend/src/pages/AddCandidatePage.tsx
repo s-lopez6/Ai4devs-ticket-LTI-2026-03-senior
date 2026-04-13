@@ -1,21 +1,31 @@
-import React from 'react';
+import React from "react";
 import {
   Alert,
+  Box,
+  Button,
   Card,
   CardContent,
   Container,
   Snackbar,
   Stack,
   Typography,
-} from '@mui/material';
+} from "@mui/material";
 
-import { CandidateForm } from '../components/CandidateForm';
+import { CandidateForm } from "../components/CandidateForm";
 import {
   createCandidate,
   type ApiError,
   type Candidate,
   type CreateCandidateRequest,
-} from '../services/candidateService';
+} from "../services/candidateService";
+
+// Tip items displayed in the side panel
+const TIPS = [
+  "Full name and email are the only required fields.",
+  "Use the LinkedIn URL field to link the candidate social profile.",
+  "Add structured notes to help the hiring team during review.",
+  "Attach a CV using the file picker — it will be saved with the profile.",
+] as const;
 
 export default function AddCandidatePage(): JSX.Element {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -23,9 +33,10 @@ export default function AddCandidatePage(): JSX.Element {
   const [serverFieldErrors, setServerFieldErrors] = React.useState<
     Record<string, string> | undefined
   >();
-  const [success, setSuccess] = React.useState<{ open: boolean; message: string }>(
-    { open: false, message: '' }
-  );
+  const [success, setSuccess] = React.useState<{
+    open: boolean;
+    message: string;
+  }>({ open: false, message: "" });
 
   const handleSubmit = async (values: CreateCandidateRequest) => {
     setServerError(undefined);
@@ -44,9 +55,11 @@ export default function AddCandidatePage(): JSX.Element {
       if (apiError.status === 400 && apiError.validationErrors) {
         setServerFieldErrors(apiError.validationErrors);
       } else if (apiError.status === 409) {
-        setServerError('A candidate with this email already exists.');
+        setServerError("A candidate with this email already exists.");
       } else {
-        setServerError(apiError.message || 'Something went wrong. Please try again.');
+        setServerError(
+          apiError.message || "Something went wrong. Please try again.",
+        );
       }
       throw apiError;
     } finally {
@@ -55,18 +68,47 @@ export default function AddCandidatePage(): JSX.Element {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ py: 4 }}>
-      <Stack spacing={2}>
+    <Container maxWidth="lg">
+      {/* ── Page header ───────────────────────────────────────────────────── */}
+      <Stack spacing={0.5} sx={{ mb: 4 }}>
+        {/* Back navigation — uses history API; no Router dependency needed here */}
+        <Button
+          variant="text"
+          size="small"
+          onClick={() => window.history.back()}
+          aria-label="Go back to previous page"
+          sx={{
+            alignSelf: "flex-start",
+            px: 0,
+            color: "text.secondary",
+            minWidth: "auto",
+            "&:hover": { bgcolor: "transparent", color: "text.primary" },
+          }}
+        >
+          ← Back
+        </Button>
+
         <Typography variant="h4" component="h1">
           Add Candidate
         </Typography>
 
         <Typography variant="body1" color="text.secondary">
-          Create a new candidate profile.
+          Create a new candidate profile. Fields marked with * are required.
         </Typography>
+      </Stack>
 
+      {/* ── Two-column layout ─────────────────────────────────────────────── */}
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "3fr 1fr" },
+          gap: 3,
+          alignItems: "start",
+        }}
+      >
+        {/* Main form card */}
         <Card variant="outlined">
-          <CardContent>
+          <CardContent sx={{ p: { xs: 2.5, sm: 3, md: 4 } }}>
             <CandidateForm
               onSubmit={handleSubmit}
               isSubmitting={isSubmitting}
@@ -75,19 +117,69 @@ export default function AddCandidatePage(): JSX.Element {
             />
           </CardContent>
         </Card>
-      </Stack>
 
+        {/* Tips side panel */}
+        <Card
+          variant="outlined"
+          sx={{
+            bgcolor: "rgba(67, 56, 202, 0.03)",
+            borderColor: "rgba(67, 56, 202, 0.18)",
+            // On small screens the tips panel stacks below the form
+            display: { xs: "none", md: "block" },
+          }}
+        >
+          <CardContent sx={{ p: 3 }}>
+            <Typography
+              variant="subtitle2"
+              gutterBottom
+              sx={{ fontWeight: 700, color: "primary.main", mb: 2 }}
+            >
+              Tips
+            </Typography>
+
+            <Stack spacing={1.5}>
+              {TIPS.map((tip) => (
+                <Box
+                  key={tip}
+                  sx={{ display: "flex", gap: 1.5, alignItems: "flex-start" }}
+                >
+                  <Box
+                    aria-hidden="true"
+                    sx={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: "50%",
+                      bgcolor: "primary.light",
+                      mt: "7px",
+                      flexShrink: 0,
+                    }}
+                  />
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ lineHeight: 1.7 }}
+                  >
+                    {tip}
+                  </Typography>
+                </Box>
+              ))}
+            </Stack>
+          </CardContent>
+        </Card>
+      </Box>
+
+      {/* ── Success toast ─────────────────────────────────────────────────── */}
       <Snackbar
         open={success.open}
-        autoHideDuration={4000}
+        autoHideDuration={5000}
         onClose={() => setSuccess((prev) => ({ ...prev, open: false }))}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
         <Alert
           onClose={() => setSuccess((prev) => ({ ...prev, open: false }))}
           severity="success"
           variant="filled"
-          sx={{ width: '100%' }}
+          sx={{ width: "100%" }}
         >
           {success.message}
         </Alert>
@@ -95,4 +187,3 @@ export default function AddCandidatePage(): JSX.Element {
     </Container>
   );
 }
-
