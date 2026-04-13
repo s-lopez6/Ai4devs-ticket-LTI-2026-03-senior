@@ -154,7 +154,7 @@ export function FilePicker({
     : {
         "&:hover": {
           borderColor: "primary.light",
-          bgcolor: "rgba(67, 56, 202, 0.04)",
+          bgcolor: "rgba(167, 199, 231, 0.08)",
         },
       };
 
@@ -197,10 +197,10 @@ export function FilePicker({
           borderRadius: 2,
           p: { xs: 2.5, md: 3.5 },
           bgcolor: state.isDragOver
-            ? "rgba(67, 56, 202, 0.06)"
+            ? "rgba(167, 199, 231, 0.15)"
             : hasFile
-              ? "rgba(22, 163, 74, 0.05)"
-              : "rgba(248, 250, 252, 1)",
+              ? "rgba(183, 228, 199, 0.15)"
+              : "#FAFAFF",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

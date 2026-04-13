@@ -122,8 +122,8 @@ export default function AddCandidatePage(): JSX.Element {
         <Card
           variant="outlined"
           sx={{
-            bgcolor: "rgba(67, 56, 202, 0.03)",
-            borderColor: "rgba(67, 56, 202, 0.18)",
+            bgcolor: "rgba(167, 199, 231, 0.08)",
+            borderColor: "rgba(167, 199, 231, 0.35)",
             // On small screens the tips panel stacks below the form
             display: { xs: "none", md: "block" },
           }}

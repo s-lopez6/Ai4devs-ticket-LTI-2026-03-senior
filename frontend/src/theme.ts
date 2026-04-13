@@ -1,53 +1,54 @@
 import { createTheme } from "@mui/material/styles";
 
 // ─── Brand palette ────────────────────────────────────────────────────────────
-// Primary  : Indigo  – trust, reliability, professionalism
-// Secondary: Cyan    – modern tech accent
-// Semantics: standard success / error / warning tokens
+// Source of truth: README.md "Branding & UI" section
+// Primary  : Pastel blue     #A7C7E7
+// Secondary: Pastel lavender #CDB4DB
+// Background: #FAFAFF  |  Surface: #FFFFFF
+// Text: #1F2937 (primary) / #6B7280 (muted)
 // ─────────────────────────────────────────────────────────────────────────────
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#4338CA",
-      light: "#818CF8",
-      dark: "#3730A3",
-      contrastText: "#FFFFFF",
+      main: "#A7C7E7",
+      light: "#C8DCF0",
+      dark: "#7AAFD3",
+      contrastText: "#1F2937",
     },
     secondary: {
-      main: "#0891B2",
-      light: "#67E8F9",
-      dark: "#0E7490",
-      contrastText: "#FFFFFF",
+      main: "#CDB4DB",
+      light: "#DECAE8",
+      dark: "#B09CC8",
+      contrastText: "#1F2937",
     },
     success: {
-      main: "#16A34A",
-      light: "#4ADE80",
-      dark: "#15803D",
-      contrastText: "#FFFFFF",
+      main: "#B7E4C7",
+      light: "#CEEEDD",
+      dark: "#8ECFAC",
+      contrastText: "#1F2937",
     },
     error: {
-      main: "#DC2626",
-      light: "#F87171",
-      dark: "#B91C1C",
-      contrastText: "#FFFFFF",
+      main: "#FFADAD",
+      light: "#FFCCCC",
+      dark: "#FF8080",
+      contrastText: "#1F2937",
     },
     warning: {
-      main: "#D97706",
-      light: "#FCD34D",
-      dark: "#B45309",
-      contrastText: "#FFFFFF",
+      main: "#FFF3B0",
+      light: "#FFF8D0",
+      dark: "#FFE870",
+      contrastText: "#1F2937",
     },
     background: {
-      default: "#F8FAFC",
+      default: "#FAFAFF",
       paper: "#FFFFFF",
     },
     text: {
-      primary: "#0F172A",
-      secondary: "#64748B",
-      disabled: "#94A3B8",
+      primary: "#1F2937",
+      secondary: "#6B7280",
     },
-    divider: "#E2E8F0",
+    divider: "#E5E7EB",
   },
 
   // ─── Typography ────────────────────────────────────────────────────────────
@@ -75,18 +76,18 @@ const theme = createTheme({
           padding: "10px 20px",
           transition: "all 0.2s ease",
           "&:focus-visible": {
-            outline: "3px solid #818CF8",
+            outline: "3px solid #7AAFD3",
             outlineOffset: "2px",
           },
           "&.MuiButton-containedPrimary": {
-            boxShadow: "0 1px 3px rgba(67, 56, 202, 0.25)",
+            boxShadow: "0 1px 3px rgba(122, 175, 211, 0.35)",
             "&:hover": {
-              boxShadow: "0 4px 12px rgba(67, 56, 202, 0.35)",
+              boxShadow: "0 4px 12px rgba(122, 175, 211, 0.5)",
               transform: "translateY(-1px)",
             },
             "&:active": {
               transform: "translateY(0)",
-              boxShadow: "0 1px 3px rgba(67, 56, 202, 0.25)",
+              boxShadow: "0 1px 3px rgba(122, 175, 211, 0.35)",
             },
           },
         },
@@ -100,16 +101,16 @@ const theme = createTheme({
           "& .MuiOutlinedInput-root": {
             transition: "box-shadow 0.15s ease",
             "&:hover .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#818CF8",
+              borderColor: "#A7C7E7",
             },
             "&.Mui-focused": {
-              boxShadow: "0 0 0 3px rgba(67, 56, 202, 0.12)",
+              boxShadow: "0 0 0 3px rgba(167, 199, 231, 0.35)",
             },
             "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#4338CA",
+              borderColor: "#7AAFD3",
             },
             "&.Mui-error.Mui-focused": {
-              boxShadow: "0 0 0 3px rgba(220, 38, 38, 0.12)",
+              boxShadow: "0 0 0 3px rgba(255, 173, 173, 0.35)",
             },
           },
         },
@@ -135,8 +136,8 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "#FFFFFF",
-          color: "#0F172A",
-          borderBottom: "1px solid #E2E8F0",
+          color: "#1F2937",
+          borderBottom: "1px solid #E5E7EB",
         },
       },
     },

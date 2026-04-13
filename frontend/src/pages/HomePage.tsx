@@ -99,7 +99,7 @@ export default function HomePage(): JSX.Element {
                 variant="h6"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 700, color }}
+                sx={{ fontWeight: 700 }}
               >
                 {title}
               </Typography>
