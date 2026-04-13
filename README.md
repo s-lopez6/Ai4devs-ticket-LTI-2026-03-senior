@@ -2,6 +2,36 @@
 
 This project is a full-stack application with a React frontend and an Express backend using Prisma as an ORM. The frontend is initiated with Create React App, and the backend is written in TypeScript.
 
+## Branding & UI (source of truth)
+
+This section defines the product branding and UI decisions to keep the frontend consistent.
+
+- **Application name**: **LTI – Talent Tracking System (ATS)**
+- **UI library**: **Material UI (MUI)**
+- **Color palette (pastel)**:
+
+| Token | Hex |
+| --- | --- |
+| Primary (pastel blue) | `#A7C7E7` |
+| Secondary (pastel lavender) | `#CDB4DB` |
+| Accent (pastel peach) | `#FFD6A5` |
+| Background | `#FAFAFF` |
+| Surface | `#FFFFFF` |
+| Text (primary) | `#1F2937` |
+| Text (muted) | `#6B7280` |
+| Success (pastel green) | `#B7E4C7` |
+| Warning (pastel yellow) | `#FFF3B0` |
+| Error (pastel red) | `#FFADAD` |
+| Border/Divider | `#E5E7EB` |
+
+### Frontend UI setup (MUI)
+
+If you need to use MUI components, install the required packages from `frontend/`:
+
+```sh
+npm install @mui/material @emotion/react @emotion/styled @mui/icons-material
+```
+
 ## Directory and File Explanation
 
 - `backend/`: Contains the server-side code written in Node.js.
