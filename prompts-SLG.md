@@ -15,3 +15,8 @@ Prompt 2: Almost okey. I dont like the colors. Please, use Pastel colors. Give m
 Prompt 3: Yeah I like it. Please, adapt the documentation, and add the correspoinding instructions for the frontend agent
 
 /commit Adding branding
+
+# WORK
+
+(model auto)
+/enrich-us Enrich the story @ai-specs/changes/SCRUM-1-Add-Candidates.md . Do not use JIRA, is not connected so far.
