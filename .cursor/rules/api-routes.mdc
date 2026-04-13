@@ -1,6 +1,6 @@
 ---
-description: 'Convenciones para rutas API en Next.js'
-globs: ['src/app/api/**/*.ts']
+description: "Convenciones para rutas API en Next.js"
+globs: ["src/app/api/**/*.ts"]
 alwaysApply: false
 ---
 
